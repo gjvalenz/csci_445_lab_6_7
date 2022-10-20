@@ -32,6 +32,8 @@ int triggerBlack;
 int mode; // 1 = follow mode, 2 = avoid mode
 //int facing; // 0 = straight, 1 = right, 2 = left
 float keepDistance = 8.0;
+float blackScale = 1.2;
+float blackOffset = 20;
 
 void initAvoid();
 void initFollow();
@@ -74,7 +76,7 @@ void calibrateSensors()
       maxDark = calVals[i];
     }
   }
-  triggerBlack = maxDark > 0 ? 1.2 * maxDark : maxDark + 20;
+  triggerBlack = maxDark > 0 ? blackScale * maxDark : maxDark + blackOffset;
 }
 
 int calculateHeuristic(uint16_t* sensorVals)
