@@ -157,6 +157,9 @@ void setup()
 
 void loop()
 {
+  // stage 1
+  followLine();
+ /* stage 2 
  if(mode == FOLLOW)
  {
     if(objectNear())
@@ -179,7 +182,7 @@ void loop()
     {
       avoidObject();
     }
- }
+ }*/
 }
 
 
